@@ -1,7 +1,7 @@
 import { dag, Container, Directory, Secret, object, func, argument } from '@dagger.io/dagger'
 
 @object()
-class HelloDagger {
+export class HelloDagger {
   /**
    * Publish the application container after building and testing it on-the-fly
    */
