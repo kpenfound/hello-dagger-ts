@@ -100,7 +100,7 @@ export class HelloDagger {
     githubToken: Secret,
     issueID: number,
     repository: string,
-    source: Directory = dag.directory()
+    @argument({ defaultPath: '/' }) source: Directory
   ): Promise<string> {
     // Get the Github issue
     const issueClient = dag.githubIssue({ token: githubToken })
