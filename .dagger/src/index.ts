@@ -62,12 +62,12 @@ export class HelloDagger {
   ): Promise<Directory> {
     // Environment with agent inputs and outputs
     const environment = dag
-      .env({ privileged: true })
+      .env()
       .withStringInput('assignment', assignment, 'the assignment to complete')
       .withWorkspaceInput(
         'workspace',
         dag.workspace(source),
-        'the workspace with tools to edit code'
+        'the workspace with tools to edit and test code'
       )
       .withWorkspaceOutput('completed', 'the workspace with the completed assignment')
 

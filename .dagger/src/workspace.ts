@@ -44,11 +44,8 @@ export class Workspace {
       .stdout()
   }
 
-  /**
-   * Get the source code directory from the Workspace
-   */
   @func()
-  getSource(): Directory {
-    return this.source
+  test(): Promise<string> {
+    return new HelloDagger().test(this.source)
   }
 }
